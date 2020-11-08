@@ -1,0 +1,290 @@
+/* ============================================================== *
+ * Utility Menu Colors                                            *
+ * ============================================================== */
+$utility__background: #0082ff;
+$utility__social__static-color: white;
+$utility__social__hover-color: #ddd;
+$utility__menu__static-color: white;
+$utility__menu__hover-color: #ddd;
+$utility__menu__font: "Lato", sans-serif;
+$utility__menu__font-size: 1.25rem;
+$utility__menu__text-transform: none;
+$utility__menu__font-weight: normal;
+$utility__search__background: #f89f37;
+$utility__search__color: #333333;
+/* ============================================================== *
+  * Primary Navigation Colors                                      *
+  * ============================================================== */
+$primary__background: rgba(255, 255, 255, 0.95);
+$primary__nav__color-static: #4e4e4e;
+$primary__nav__color-hover: #5e6a71;
+$primary__nav__font: "Lato", sans-serif;
+$primary__nav__font-size: 1.5rem;
+$primary__nav__text-transform: uppercase;
+$primary__nav__font-weight: 600;
+$primary__sub-menu__background-static: #0082ff;
+$primary__sub-menu__font: "Lato", sans-serif;
+$primary__sub-menu__font-size: 1.25rem;
+$primary__sub-menu__text-transform: none;
+$primary__sub-menu__font-weight: normal;
+$primary__sub-menu__background-hover: #0082ff;
+/* ============================================================== *
+  * Mobile Menu Colors                                             *
+  * ============================================================== */
+$mobile-menu__background: #eee;
+$mobile-menu__nav__color-static: #aaaaaa;
+$mobile-menu__nav__color-hover: #5e6a71;
+$mobile-menu__nav__font: inherit;
+$mobile-menu__nav__font-size: inherit;
+$mobile-menu__nav__font-weight: normal;
+$mobile-menu__nav__text-transform: none;
+/* ============================================================== */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 99;
+  * {
+    transition: $transition;
+  }
+  #utility-menu {
+    background: $utility__background;
+    ul {
+      margin-bottom: 0;
+      li {
+        display: flex;
+        align-items: center;
+        font-family: $utility__menu__font;
+        font-size: $utility__menu__font-size;
+        text-transform: $utility__menu__text-transform;
+        font-weight: $utility__menu__font-weight;
+      }
+    }
+    #socials {
+      padding: 5px 0;
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        li {
+          a {
+            font-size: 2rem;
+            line-height: 0;
+
+            color: $utility__social__static-color;
+            padding: 0 10px;
+            &:hover {
+              color: $utility__social__hover-color;
+            }
+          }
+        }
+      }
+    }
+    #right-side {
+    }
+    #utility {
+      @include phone {
+        display: none;
+      }
+      padding: 5px 0;
+      ul {
+        margin-right: 10px;
+        list-style: none;
+        height: 100%;
+        li a {
+          text-decoration: none;
+          color: #fff;
+          padding: 0 10px;
+          font-family: "Mukta", sans-serif;
+          font-size: 1.5rem;
+          &:hover {
+            color: $utility__menu__hover-color;
+          }
+        }
+      }
+    }
+    form {
+      input {
+        height: 100%;
+        @include phone {
+          max-width: 150px;
+        }
+        background: $utility__search__background;
+        border: none;
+        padding: 5px 20px;
+        color: $utility__search__color;
+        font-weight: 600;
+        font-size: 1.5rem;
+        font-family: "Mukta", sans-serif;
+        &::placeholder {
+          text-decoration: none;
+          color: #fff;
+          font-family: "Mukta", sans-serif;
+          font-size: 1.5rem;
+          color: $utility__search__color;
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  #primary-nav {
+    position: relative;
+    background: $primary__background;
+    padding: 15px 0;
+    .site-logo {
+      margin: 20px 0;
+      @include small {
+        margin: 0;
+      }
+      @include phone {
+        margin: 0;
+      }
+      @include phone {
+        max-width: 50%;
+      }
+      object-fit: contain;
+      height: 45px;
+    }
+    #primary {
+      @include phone {
+        display: none;
+      }
+      width: 100%;
+      ul {
+        list-style: none;
+        &:not(.sub-menu) {
+          height: 100%;
+          margin-bottom: 0;
+        }
+        li {
+          font-family: $primary__nav__font;
+          font-size: $primary__nav__font-size;
+          text-transform: $primary__nav__text-transform;
+          font-weight: $primary__nav__font-weight;
+          position: relative;
+          .sub-menu {
+            border-top: 5px solid #ff9f00;
+            z-index: 3;
+            &.hidden {
+              display: none;
+            }
+            position: absolute;
+            width: 250px;
+            background: $primary__sub-menu__background-static;
+            margin-top: 5px;
+            padding: 10px 0;
+            a {
+              width: 100%;
+              display: block;
+              padding: 10px 20px;
+              line-height: 1.8rem;
+              margin: 5px 0;
+              background: #0082ff;
+              text-transform: none;
+              font-weight: normal;
+              text-decoration: none;
+              color: #fff;
+              font-family: "Mukta", sans-serif;
+              font-size: 1.5rem;
+              &:hover {
+                background: $primary__sub-menu__background-hover;
+                color: #003f78;
+              }
+              li {
+                padding: 0 20px;
+              }
+            }
+          }
+          a {
+            color: $primary__nav__color-static;
+            padding: 0 20px;
+            @include small {
+              padding: 0 10px;
+            }
+            padding-bottom: 15px;
+            text-decoration: none;
+            &:hover {
+              color: $primary__nav__color-hover;
+            }
+            @include large {
+              font-size: 1.6rem;
+              letter-spacing: 0.125rem;
+            }
+            @include medium {
+              font-size: 1.6rem;
+              letter-spacing: 0.125rem;
+            }
+          }
+        }
+      }
+    }
+    #mobile-nav {
+      z-index: 4;
+      display: none;
+      @include phone {
+        display: block;
+      }
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+    }
+    #mobile-menu {
+      &,
+      * {
+        z-index: 3;
+      }
+      background: $mobile-menu__background;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.hidden {
+        opacity: 0;
+        right: -100vw;
+      }
+      &:not(.hidden) {
+        opacity: 1;
+        right: 0;
+      }
+      ul {
+        list-style: none;
+        &:not(.sub-menu) {
+          width: 100%;
+          padding-right: 75px;
+          li {
+            margin: 15px 0;
+          }
+        }
+        text-align: right;
+        a {
+          font-family: $mobile-menu__nav__font;
+          font-size: $mobile-menu__nav__font-size;
+          text-transform: $mobile-menu__nav__text-transform;
+          font-weight: $mobile-menu__nav__font-weight;
+          color: $mobile-menu__nav__color-static;
+          padding: 0 10px;
+          text-decoration: none;
+          &:hover {
+            color: $mobile-menu__nav__color-hover;
+          }
+        }
+        &.sub-menu {
+          position: relative;
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
+#utility-menu > .container {
+  align-items: center;
+}
