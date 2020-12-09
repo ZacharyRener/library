@@ -1,0 +1,1 @@
+jQuery('.home-carousel').slick();
