@@ -1,0 +1,50 @@
+#footer {
+  background: #2b2b2b;
+  padding: 20px 0;
+  .container {
+    display: flex;
+    align-items: center;
+    @include phone {
+      display: block;
+    }
+    .left {
+      min-width: 400px;
+      @include phone {
+        min-width: unset;
+      }
+      letter-spacing: 0.15rem;
+      text-transform: uppercase !important;
+      font-size: 1.4rem !important;
+      margin-bottom: 0 !important;
+      font-family: "Lato", sans-serif;
+      font-weight: 600;
+      color: #fff;
+    }
+    .right {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      @include phone {
+        width: auto;
+        display: block;
+      }
+      ul {
+        margin-bottom: 0 !important;
+        @include phone {
+          padding-left: 0;
+        }
+        li {
+          a {
+            letter-spacing: 0.15rem;
+            text-transform: none !important;
+            font-size: 1.3rem !important;
+            margin-bottom: 15px !important;
+            font-family: "Lato", sans-serif;
+            font-weight: 600;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
