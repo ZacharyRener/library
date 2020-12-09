@@ -3,29 +3,29 @@
     <div class="container d-flex flex-row">
       <nav id="socials" class="">
         <ul class="d-flex flex-row">
-          {#each socialIcons as { icon_name, link }}
-            <li>
-              <a target="_blank" href={link}>{@html icon_name}</a>
-            </li>
-          {/each}
+          <?php 
+          if(have_rows('social_media', 'options')):
+            while(have_rows('social_media', 'options')): the_row(); ?>
+              <li>
+                <a target="_blank" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('icon_name'); ?></a>
+              </li>
+            <?php endwhile;
+          endif;
+          ?>
         </ul>
       </nav>
       <section
         id="right-side"
         class="d-flex flex-row w-100 justify-content-end">
         <nav id="utility">
-          <ul class="d-flex flex-row">
-            {#each utilityMenu as { title, url, child_items }}
-              <li><a href={url}>{title}</a></li>
-              {#if child_items}
-                <ul class="sub-menu hidden">
-                  {#each child_items as { title, url }}
-                    <li><a href={url}>{title}</a></li>
-                  {/each}
-                </ul>
-              {/if}
-            {/each}
-          </ul>
+          <?php
+            wp_nav_menu( array(
+              'menu'              => 3,
+              'menu_class'        => "d-flex flex-row",
+              'container_class'   => "",
+              'depth'             => 3,
+          ) );
+          ?>
         </nav>
         <form action="/">
           <input id="s" name="s" placeholder="Search..." />
@@ -35,27 +35,20 @@
   </section>
   <section id="primary-nav" class="">
     <div class="container d-flex flex-row">
-      <a href="/"><img src={logo} class="site-logo" alt="" /></a>
+      <?php if(get_field('logo', 'options')): ?>
+      <a href="/">
+        <img src="<?php the_field('logo', 'options'); ?>" class="site-logo" alt="" />
+      </a>
+      <?php endif; ?>
       <nav id="primary">
-        <ul
-          class="d-flex flex-row w-100 justify-content-end align-items-center">
-          {#each primaryMenu as { title, url, child_items }}
-            <li>
-              <a
-                on:mouseenter|self={navEnter}
-                on:mouseleave|self={navLeave}
-                href={url}
-                class={2}>{title}</a>
-              {#if child_items}
-                <ul on:mouseleave|self={toggleMenu} class="sub-menu hidden">
-                  {#each child_items as { title, url }}
-                    <li><a href={url}>{title}</a></li>
-                  {/each}
-                </ul>
-              {/if}
-            </li>
-          {/each}
-        </ul>
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 2,
+            'menu_class'        => "d-flex flex-row w-100 justify-content-end align-items-center",
+            'container_class'   => "",
+            'depth'             => 3,
+        ) );
+        ?>
       </nav>
     </div>
     <section id="mobile-nav">
@@ -67,19 +60,14 @@
       </button>
     </section>
     <section id="mobile-menu" class="hidden">
-      <ul>
-        {#each primaryMenu as { title, url, child_items }}
-          <li>
-            <a href={url}>{title}</a>{#if child_items}
-              <ul class="sub-menu hidden">
-                {#each child_items as { title, url }}
-                  <li><a href={url}>{title}</a></li>
-                {/each}
-              </ul>
-            {/if}
-          </li>
-        {/each}
-      </ul>
+      <?php
+        wp_nav_menu( array(
+          'menu'              => 2,
+          'menu_class'        => "",
+          'container_class'   => "",
+          'depth'             => 3,
+      ) );
+      ?>
     </section>
   </section>
 </section>
