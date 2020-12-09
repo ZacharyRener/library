@@ -19,3 +19,7 @@ if (event.target.parentElement.children.length > 1)
 const toggleMenu = (event) => {
 event.target.classList.toggle("hidden");
 };
+
+jQuery('ul.sub-menu').addClass('hidden');
+jQuery('.menu-item-has-children').hover(navEnter, navLeave);
+jQuery('button.hamburger').click(handleHamburgerClick);

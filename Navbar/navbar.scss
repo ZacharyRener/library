@@ -1,33 +1,33 @@
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
-$utility__background: #0082ff;
-$utility__social__static-color: white;
+$utility__background: #323b3e;
+$utility__social__static-color: #b7b8bb;
 $utility__social__hover-color: #ddd;
-$utility__menu__static-color: white;
+$utility__menu__static-color: #b7b8bb;
 $utility__menu__hover-color: #ddd;
-$utility__menu__font: "Lato", sans-serif;
-$utility__menu__font-size: 1.25rem;
-$utility__menu__text-transform: none;
-$utility__menu__font-weight: normal;
-$utility__search__background: #f89f37;
-$utility__search__color: #333333;
+$utility__menu__font: "Barlow", sans-serif;
+$utility__menu__font-size: 0.9rem;
+$utility__menu__text-transform: uppercase;
+$utility__menu__font-weight: 500;
+$utility__search__background: #3f4a4e;
+$utility__search__color: #b7b8bb;
 /* ============================================================== *
   * Primary Navigation Colors                                      *
   * ============================================================== */
-$primary__background: rgba(255, 255, 255, 0.95);
-$primary__nav__color-static: #4e4e4e;
+$primary__background: transparent;
+$primary__nav__color-static: #323b3e;
 $primary__nav__color-hover: #5e6a71;
-$primary__nav__font: "Lato", sans-serif;
-$primary__nav__font-size: 1.5rem;
+$primary__nav__font: "Barlow", sans-serif;
+$primary__nav__font-size: 0.8rem;
 $primary__nav__text-transform: uppercase;
-$primary__nav__font-weight: 600;
-$primary__sub-menu__background-static: #0082ff;
-$primary__sub-menu__font: "Lato", sans-serif;
-$primary__sub-menu__font-size: 1.25rem;
-$primary__sub-menu__text-transform: none;
-$primary__sub-menu__font-weight: normal;
-$primary__sub-menu__background-hover: #0082ff;
+$primary__nav__font-weight: 500;
+$primary__sub-menu__background-static: #323b3e;;
+$primary__sub-menu__font: "Barlow", sans-serif;
+$primary__sub-menu__font-size: 0.8rem;
+$primary__sub-menu__text-transform: uppercase;
+$primary__sub-menu__font-weight: 500;
+$primary__sub-menu__background-hover: #00a2c8;
 /* ============================================================== *
   * Mobile Menu Colors                                             *
   * ============================================================== */
@@ -39,6 +39,12 @@ $mobile-menu__nav__font-size: inherit;
 $mobile-menu__nav__font-weight: normal;
 $mobile-menu__nav__text-transform: none;
 /* ============================================================== */
+
+nav#primary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
 #header {
   position: fixed;
@@ -53,13 +59,17 @@ $mobile-menu__nav__text-transform: none;
     background: $utility__background;
     ul {
       margin-bottom: 0;
-      li {
+      li, li a {
+        color: $utility__menu__static-color;
         display: flex;
         align-items: center;
         font-family: $utility__menu__font;
         font-size: $utility__menu__font-size;
         text-transform: $utility__menu__text-transform;
         font-weight: $utility__menu__font-weight;
+      }
+      li {
+        margin-right: 20px;
       }
     }
     #socials {
@@ -94,11 +104,6 @@ $mobile-menu__nav__text-transform: none;
         list-style: none;
         height: 100%;
         li a {
-          text-decoration: none;
-          color: #fff;
-          padding: 0 10px;
-          font-family: "Mukta", sans-serif;
-          font-size: 1.5rem;
           &:hover {
             color: $utility__menu__hover-color;
           }
@@ -116,16 +121,17 @@ $mobile-menu__nav__text-transform: none;
         padding: 5px 20px;
         color: $utility__search__color;
         font-weight: 600;
-        font-size: 1.5rem;
-        font-family: "Mukta", sans-serif;
+        font-size: $utility__menu__font-size;
+        font-family: $utility__menu__font;
+        text-transform: $utility__menu__text-transform;
         &::placeholder {
           text-decoration: none;
           color: #fff;
-          font-family: "Mukta", sans-serif;
-          font-size: 1.5rem;
+          font-family: $utility__menu__font;
+          font-size: $utility__menu__font-size;
           color: $utility__search__color;
-          font-weight: 600;
-          font-size: 1.5rem;
+          text-transform: $utility__menu__text-transform;
+          font-weight: 500;
         }
       }
     }
@@ -167,7 +173,7 @@ $mobile-menu__nav__text-transform: none;
           font-weight: $primary__nav__font-weight;
           position: relative;
           .sub-menu {
-            border-top: 5px solid #ff9f00;
+            border-top: 5px solid #00a2c8;
             z-index: 3;
             &.hidden {
               display: none;
@@ -183,16 +189,15 @@ $mobile-menu__nav__text-transform: none;
               padding: 10px 20px;
               line-height: 1.8rem;
               margin: 5px 0;
-              background: #0082ff;
-              text-transform: none;
-              font-weight: normal;
+              text-transform: $primary__sub-menu__text-transform;
+              font-weight: $primary__sub-menu__font-weight;
+              font-size: $primary__sub-menu__font-size;
+              font-family: $primary__sub-menu__font;
               text-decoration: none;
-              color: #fff;
-              font-family: "Mukta", sans-serif;
-              font-size: 1.5rem;
+              color: white;
               &:hover {
                 background: $primary__sub-menu__background-hover;
-                color: #003f78;
+                color: white;
               }
               li {
                 padding: 0 20px;
@@ -204,6 +209,7 @@ $mobile-menu__nav__text-transform: none;
             padding: 0 20px;
             @include small {
               padding: 0 10px;
+              font-size: 0.8rem;
             }
             padding-bottom: 15px;
             text-decoration: none;
@@ -211,11 +217,11 @@ $mobile-menu__nav__text-transform: none;
               color: $primary__nav__color-hover;
             }
             @include large {
-              font-size: 1.6rem;
+              font-size: 1.1rem;
               letter-spacing: 0.125rem;
             }
             @include medium {
-              font-size: 1.6rem;
+              font-size: 0.9rem;
               letter-spacing: 0.125rem;
             }
           }
