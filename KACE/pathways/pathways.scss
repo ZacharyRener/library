@@ -1,0 +1,97 @@
+section#pathways {
+
+    .headline {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 500;
+        font-size: 48px;
+        color: #005474;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+    }
+
+    .pathway-container {
+        
+        display: flex;
+        flex-wrap: wrap;
+
+        .pathway {
+            background: #005474;
+            width: 50%;
+            @media(max-width:1000px){
+                text-align: center !important;
+            }
+            &:nth-child(odd) {
+                text-align: right;
+                margin-right: 0%;
+                clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+                background: rgb(0,162,200);
+                background: linear-gradient(90deg, rgba(0,162,200,1) 0%, rgba(0,85,117,1) 100%);
+            }
+            &:nth-child(even) {
+                margin-left: 0%;
+                clip-path: polygon(9% 0, 100% 0, 100% 100%, 0% 100%);
+                background: rgb(0,86,118);
+                background: linear-gradient(90deg, rgba(0,86,118,1) 0%, rgba(0,162,200,1) 100%);
+            }
+            padding: 30px 30px;
+            margin-bottom: 25px;
+            a {
+                font-family: 'Barlow', sans-serif;
+                font-weight: 400;
+                font-size: 18px;
+                color: white;
+                text-transform:uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+        .pathway {
+            &:nth-child(1) {
+                width: 60% !important;
+                padding-right: 100px;
+                @media(max-width:1000px){
+                    width: 100% !important;
+                }
+            }
+            &:nth-child(2) {
+                width: calc( 40% + 50px ) !important;
+                clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%) !important;
+                margin-left: -50px !important;
+                padding-left: 100px;
+                 @media(max-width:1000px){
+                    width: 100% !important;
+                    margin-left: 0 !important;
+                }
+            }
+            &:nth-child(3) {
+                padding-right: 100px;
+                width: 53% !important;
+                 @media(max-width:1000px){
+                    width: 100% !important;
+                }
+            }
+            &:nth-child(4) {
+                width: calc( 47% + 50px ) !important;
+                margin-left: -50px !important;
+                padding-left: 100px;
+                clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%) !important;
+                 @media(max-width:1000px){
+                    width: 100% !important;
+                    margin-left: 0 !important;
+                }
+            }
+            &:nth-child(5) {
+                padding-right: 100px;
+                width: 47% !important;
+                 @media(max-width:1000px){
+                    width: 100% !important;
+                    padding-right: 0 !important;
+                }
+            }
+           
+        }
+
+    }
+    
+
+}

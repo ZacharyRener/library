@@ -1,9 +1,10 @@
 .home-carousel {
 
     .home-slide {
-        height: calc(100vh - 31px);
+        height: calc(130vh - 31px);
         margin-top: 31px;
         background-size: cover;
+        background-position: bottom;
         background-repeat: no-repeat;
         display: flex !important;
         align-items: center;

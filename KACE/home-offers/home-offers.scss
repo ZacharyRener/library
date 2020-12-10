@@ -1,0 +1,158 @@
+section#home-offers {
+
+    background-image:url(http://kace.local/wp-content/uploads/2020/12/offers-bg.jpg);
+    padding-bottom: 200px;
+    background-size: cover;
+
+    .content, .image, .image img {
+        height: 313px !important;
+        @media(max-width: 1000px){
+            height: 359px !important;
+        }
+        @media(max-width: 768px){
+            height: auto !important;
+        }
+    }
+    @media(max-width:1000px){
+        .with-bg {
+            height: 322px !important;
+        }
+    }
+    @media(max-width: 768px){
+        .with-bg {
+            height: auto !important;
+        }
+    }
+    
+    .image img {
+        object-fit: cover;
+    }
+
+    .featured-offer {
+        padding-top: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        @media(max-width:768px){
+            display: block !important;
+        }
+        .image {
+            width: 50%;
+            @media(max-width:768px){
+                width: 100% !important;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+        .content {
+            width: 50%;
+            @media(max-width:768px){
+                width: 100% !important;
+                margin-bottom: 30px;
+            }
+            position: relative;
+            .with-bg {
+                background: white;
+                padding: 50px 25px;
+                height: 275px;
+                @media(max-width:768px){
+                    height: auto !important;
+                }
+                p.headline {
+                    font-family: 'Barlow Condensed', sans-serif;
+                    font-weight: 600;
+                    font-size: 30px;
+                    color: #005474;
+                    text-transform: uppercase;
+                }
+                p:not(.headline) {
+                    font-family: 'Barlow', sans-serif;
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+            .offer-btn {
+                background: rgb(0,86,118);
+                background: linear-gradient(90deg, rgba(0,86,118,1) 0%, rgba(0,162,200,1) 100%);
+                font-size: 12px;
+                font-family: 'Barlow', sans-serif;
+                font-weight: 600;
+                text-transform: uppercase;
+                width: 100%;
+                padding: 10px 25px;
+                color: white;
+                letter-spacing: 1.5px;
+                position: absolute;
+                bottom: 0;
+                width: 80%;
+                clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+            }
+        }
+    }
+
+    .small-offers {
+        margin-top: 50px;
+        display:  flex;
+        @media(max-width:768px){
+            display: block;
+        }
+        flex-wrap: wrap;
+        .offer-container {
+            &:nth-child(1){
+                padding-right: 20px;
+                @media(max-width:768px){
+                    padding-right:0;
+                }
+            }
+            &:nth-child(2){
+                padding-left: 20px;
+                @media(max-width:768px){
+                    padding-left:0;
+                }
+            }
+            width: 50%;
+            @media(max-width:768px){
+                width: 100%;
+            }
+            position: relative;
+            .with-bg {
+                background: white;
+                padding: 25px 25px;
+                height: 208px;
+                margin-bottom: 38px;
+                padding-bottom: 50px;
+                p.headline {
+                    font-family: 'Barlow Condensed', sans-serif;
+                    font-weight: 600;
+                    font-size: 30px;
+                    color: #005474;
+                    text-transform: uppercase;
+                }
+                p:not(.headline) {
+                    font-family: 'Barlow', sans-serif;
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+            .offer-btn {
+                background: rgb(0,86,118);
+                background: linear-gradient(90deg, rgba(0,86,118,1) 0%, rgba(0,162,200,1) 100%);
+                font-size: 12px;
+                font-family: 'Barlow', sans-serif;
+                font-weight: 600;
+                text-transform: uppercase;
+                width: 100%;
+                padding: 10px 25px;
+                color: white;
+                letter-spacing: 1.5px;
+                position: absolute;
+                bottom: 0;
+                width: 80%;
+                clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+            }
+        }
+    }
+
+}
