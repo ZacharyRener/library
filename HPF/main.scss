@@ -52,3 +52,61 @@ header {
         margin-bottom: 0;
     }
 }
+
+body.home {
+    @include phone {
+        .navbar-toggle {
+            top: 10px;
+        }
+        
+        .home-slider .owl-slider .owl-slide .slide-img {
+            max-height: unset !important;
+        }
+        
+        .home-slider .owl-slider .owl-slide {
+            max-height: unset !important;
+        }
+        
+        .home-slider .owl-slider .owl-controls .owl-buttons {
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+        }
+        
+    }
+    section.a-e-p-section {
+        padding: 100px 0 100px 0;
+        .a-e-p-buttons {
+            margin-bottom: 50px;
+            .a-button > a {
+                background: #eee;
+                @include phone {
+                    margin-bottom: 25px;
+                }
+            }
+        }   
+    }
+    @mixin clientSliderArrowFix {
+        div.owl-prev {
+            left: 0 !important;
+        }
+        
+        div.owl-next {
+            right: 0 !important;
+        }
+    }
+    @include phone {
+       @include clientSliderArrowFix;
+    }
+    @include small {
+        @include clientSliderArrowFix;
+    }
+
+    .owl-carousel-clients .item img {
+        padding: 0 20px 0 20px;
+        object-fit: contain;
+    }
+    .our-team-box {
+        background: white;
+    }
+    
+}
