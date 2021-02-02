@@ -1,0 +1,82 @@
+@include phone {
+
+    iframe {
+        max-width: 100%;
+    }
+
+    .home-slider .owl-slider .owl-slide .slide-txt p {
+        display: block !important;
+    }
+    
+    .home-slider .owl-slider .owl-slide .slide-txt h2 {
+        line-height: normal !important;
+    }
+    
+    .page-template-template-projects-new {
+        input#search {
+            width: 100%;
+        }
+
+        .media-boxes-search {
+            width: 100%;
+        }
+
+        .media-boxes-drop-down {
+            width: 100% !important;
+        }
+
+        span.media-boxes-clear.fa.fa-close {position: absolute;right: 0;height: 0px;}
+
+        .media-boxes-search {
+            position: relative;
+        }
+    }
+
+    .single-project {
+        .visual.gallery-visual {
+            height: auto !important;
+            margin: 0 !important;
+        }
+        
+        .thumbnails {
+            margin: 10px 0 !important;
+        }
+    }
+
+    ul#utility-menu {
+        display: none;
+    }
+
+    ul#footer-menu {
+        margin: 15px 0 !important;
+        margin-bottom: 5px !important;
+        li {
+            margin-bottom: 20px;
+        }
+    }
+
+    .page-template-leadership {
+        .col-sm-7.member-info {
+            margin-top: 20px;
+        }
+        
+        h3.member-name {font-size: 27px;}
+    }
+
+    .single-leadership {
+        .col-sm-5.col-sm-offset-1.col-xs-12.person-contact {
+            padding-left: 0 !important;
+        }
+        
+        h2.leader-name {
+            font-size: 27px;
+        }
+    }
+
+    .page-template-template-news {
+        .row {
+            margin: 50px 0;
+        }
+    }
+
+}
